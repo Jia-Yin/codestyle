@@ -1,0 +1,4 @@
+# This profile includes all the rules provided by vera++ excepted F002
+# that makes some tests fail when building from the dist dir
+rule=L001
+
