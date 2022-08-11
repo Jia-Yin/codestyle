@@ -3,7 +3,12 @@
 ## Test
 ```bash
 docker build -t codestyle .
-docker run -it --rm -v "$PWD":/home/root/app/vera codestyle bash
-# cd vera
-# ./vera++ -R L001 tests/L001.cpp
+
+# Dev
+docker run -it --rm -p 8080:8080 -v "$PWD":/home/root/app/dev codestyle bash
+# cd dev
+# go run *.go
+
+# Final
+docker run --rm -p 8080:8080 codestyle
 ```
