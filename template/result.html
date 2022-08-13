@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="lib/codemirror.js"></script>
+    <link rel="stylesheet" href="lib/codemirror.css">
+    <script src="lib/clike.js"></script>
+    <link rel="stylesheet" href="lib/mystyle.css">
+</head>
+<body>
+    <h1>Style Check Result</h1>
+    <div class="board">
+        <div class="code">
+            <div class="codearea"></div>
+        </div>
+        <div class="result">
+            <pre>{{ .result }}</pre>
+        </div>
+      </div>    
+<script>
+
+var codearea = document.querySelector('.codearea')
+var myCodeMirror = CodeMirror(codearea, {
+    value: "{{ .code }}",
+    tabSize: 4,
+    indentUnit: 4,
+    styleActiveLine: true,
+    lineNumbers: true,
+    readOnly: false,
+    matchTags: true,
+    matchBrackets: false,
+    autoCloseBrackets: true,
+    indentWithTabs: true,
+    autoRefresh: true,
+    mode: "text/x-c++src", //{ name: 'clike' },//
+  });
+
+</script>  
+</body>
+</html>

@@ -1,0 +1,33 @@
+h1 {
+    background: blue;
+    color: white;
+    padding: 12px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.board {
+    background: lightgoldenrodyellow;
+}
+
+.code {
+    border: 1px solid green;
+    float: left;
+    width: 50%;
+    height: 500px;
+}
+
+.result {
+    padding-left: 16px;
+    border: 1px solid green;
+    float: left;
+    width: 40%;
+    height: 500px;
+}
+  
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
