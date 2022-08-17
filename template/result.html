@@ -1,39 +1,64 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <script src="lib/codemirror.js"></script>
     <link rel="stylesheet" href="lib/codemirror.css">
     <script src="lib/clike.js"></script>
     <link rel="stylesheet" href="lib/mystyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </head>
-<body>
+
+<body style="margin: 10px;">
     <h1>Style Check Result</h1>
-    <div class="board">
+    <div class="upload">
+        <form action="http://localhost:8080/upload" method="POST" enctype="multipart/form-data">
+            <!-- upload file:<input name="file" type="file"><br> -->
+
+
+            <div class="mb-3">
+                <!-- <label for="formFile" class="form-label">Choose a cood file:</label> -->
+                <input class="form-control" type="file" id="formFile" name="file">
+            </div>
+            <div class="d-grid gap-2">
+                <input type="submit" class="btn btn-primary" value="Submit & Check code">
+            </div>
+        </form>
+    </div>
+    <div class="board" style="margin: 10px">
         <div class="code">
             <div class="codearea"></div>
         </div>
+
         <div class="result">
             <pre>{{ .result }}</pre>
         </div>
-      </div>    
-<script>
 
-var codearea = document.querySelector('.codearea')
-var myCodeMirror = CodeMirror(codearea, {
-    value: "{{ .code }}",
-    tabSize: 4,
-    indentUnit: 4,
-    styleActiveLine: true,
-    lineNumbers: true,
-    readOnly: false,
-    matchTags: true,
-    matchBrackets: false,
-    autoCloseBrackets: true,
-    indentWithTabs: true,
-    autoRefresh: true,
-    mode: "text/x-c++src", //{ name: 'clike' },//
-  });
+    </div>
 
-</script>  
+    <script>
+
+        var codearea = document.querySelector('.codearea')
+        var myCodeMirror = CodeMirror(codearea, {
+            value: "{{ .code }}",
+            tabSize: 4,
+            indentUnit: 4,
+            styleActiveLine: true,
+            lineNumbers: true,
+            readOnly: false,
+            matchTags: true,
+            matchBrackets: false,
+            autoCloseBrackets: true,
+            indentWithTabs: true,
+            autoRefresh: true,
+            mode: "text/x-c++src", //{ name: 'clike' },//
+        });
+
+    </script>
 </body>
+
 </html>

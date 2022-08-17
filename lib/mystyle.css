@@ -1,3 +1,6 @@
+body {
+    margin: 20px auto;
+}
 h1 {
     background: blue;
     color: white;
@@ -21,7 +24,7 @@ h1 {
     padding-left: 16px;
     border: 1px solid green;
     float: left;
-    width: 40%;
+    width: 50%;
     height: 500px;
 }
   
@@ -30,4 +33,11 @@ h1 {
     content: "";
     display: table;
     clear: both;
+}
+
+.upload {
+    background-color: #ffffff;
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px;
 }
