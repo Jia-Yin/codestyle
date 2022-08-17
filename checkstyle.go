@@ -1,15 +1,15 @@
 package main
 
 import (
+	"fmt"
 	"os/exec"
 	"strings"
-	"fmt"
 )
 
 // Check Coding Style
 func checkStyle(file string) string {
 	// cmdString := "vera++ " + file + " -r ../vera/zh-TW/ -p my_profile"
-	cmdString := "./vera++ -r . -R L001 " + file
+	cmdString := "./vera2 -r . -p my_profile " + file
 
 	fmt.Println("Style:", cmdString)
 	out, err := exec.Command("/bin/sh", "-c", cmdString).Output()

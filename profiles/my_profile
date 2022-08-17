@@ -1,0 +1,27 @@
+# L001 No trailing whitespace
+# L003 No leading and no trailing empty lines
+# L004 Line cannot be too long
+# L005 There should not be too many consecutive empty lines
+# L006 Source file should not be too long
+# T001 One-line comments should not have forced continuation
+# T003 Some keywords should be followed by a single space
+# T004 Some keywords should be immediately followed by a colon
+# T005 Keywords break and continue should be immediately followed by a semicolon
+# T006 Keywords return and throw should be immediately followed by a semicolon or a single space
+# T007 Semicolons should not be isolated by spaces or comments from the rest of the code
+# T008 Blank after keywords (if, for, while, ...)
+# T009 Comma should not be preceded by whitespace, but should be followed by one
+# T010 Identifiers should not be composed of 'l' and 'O' characters only
+# T011 Curly brackets from the same pair should be either in the same line or in the same column
+# T018 Using namespace is not allowed in header files
+# T019 Control structures should have complete curly-braced block of code
+set rules {
+        L003
+        L005
+        T003
+        T004
+        T005
+        T006
+        T009
+        T011
+}
