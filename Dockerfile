@@ -14,5 +14,5 @@ ENV GOPATH=/go
 # RUN go get github.com/gin-gonic/gin@v1.7.0
 RUN go get github.com/gin-gonic/gin
 RUN go build *.go
-COPY checkstyle /home/root/app/checkstyle
+# COPY checkstyle /home/root/app/checkstyle
 CMD ["/home/root/app/checkstyle"]

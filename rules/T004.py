@@ -8,4 +8,4 @@ for f in vera.getSourceFileNames():
     for i in range(len(allTokens)-1):
         t1, t2 = allTokens[i], allTokens[i+1]
         if t1.type in keywords and t2.type != "colon":
-            vera.report(f, t1.line, "關鍵字 "+t1.value+" 後面未跟著冒號")
+            vera.report(f, t1.line, "關鍵字 "+t1.value+" 後面未緊跟著冒號")
