@@ -23,15 +23,18 @@ def paringBrace(f, tokens):
 for f in vera.getSourceFileNames():
     tokens = vera.getTokens(f, 1, 0, -1, -1, [])
     ok, pdicts = paringBrace(f, tokens)
-    if ok:
-        for i in range(len(tokens)):
-            if tokens[i].type != "leftbrace":
-                continue
-            leftP, rightP = tokens[i], pdicts[tokens[i]]
-            if leftP.line != rightP.line: # Not at the same line
-                # leftP 前面為 = 或 { 時忽略規則
+    if not ok:
+        continue
+    for i in range(len(tokens)):
+        if tokens[i].type != "leftbrace":
+            continue
+        leftP, rightP = tokens[i], pdicts[tokens[i]]
+        if leftP.line == rightP.line: # Both at the same line
+            continue
+        # Below is the case: left and right are at different lines
+        # leftP 前面為 = 或 { 時忽略規則
 
 
-            print(leftP.line, leftP.column, rightP.line, rightP.column)
+        print(leftP.line, leftP.column, rightP.line, rightP.column)
 
 
